@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mosquitto
+  name: mosquitto 
   labels:
     app: mosquitto
 spec:
@@ -16,7 +16,7 @@ spec:
         app: mosquitto
     spec:
       containers:
-        - image: eclipse-mosquitto:v2.0.20
+        - image: eclipse-mosquitto:2.0.20
           name: mosquitto
           ports:
             - containerPort: 1883
@@ -30,7 +30,7 @@ spec:
       volumes:
         - name: mosquitto-persistent-storage
           persistentVolumeClaim:
-            claimName: mq-pv-claim
+            claimName: mosquitto-pvc
         - name: mosquitto-config
           configMap:
             name: mosquitto-config
