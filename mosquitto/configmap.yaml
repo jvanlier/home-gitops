@@ -9,4 +9,3 @@ data:
     persistence_location /mosquitto/data/
     log_dest file /mosquitto/log/mosquitto.log
     allow_anonymous true
-
