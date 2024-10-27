@@ -15,6 +15,9 @@ spec:
       labels:
         app: mosquitto
     spec:
+      securityContext:
+        # Set group ownership for the volume to mosquitto user:
+        fsGroup: 1883
       containers:
         - image: eclipse-mosquitto:2.0.20
           name: mosquitto
